@@ -557,3 +557,10 @@ message FriendsInfoUpdateTips{
   FromToUserID fromToUserID = 1;
   repeated string friendIDs = 2;
 }
+
+////////////////////ClientConfig///////////////////////
+message ClientConfig{
+  string key = 1;
+  string value = 2;
+  string ex = 3;
+}
