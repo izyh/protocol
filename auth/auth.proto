@@ -50,6 +50,14 @@ message getClientConfigReq{
 message getClientConfigResp{
   sdkws.ClientConfig clientConfig = 1;
 }
+message removeClientConfigsReq{
+  repeated sdkws.ClientConfig clientConfigs = 1;
+}
+message removeClientConfigsResp{}
+message setClientConfigsReq{
+  repeated sdkws.ClientConfig clientConfigs = 1;
+}
+message setClientConfigsResp{}
 
 service Auth {
   //生成token
@@ -60,6 +68,8 @@ service Auth {
   rpc parseToken(parseTokenReq)returns(parseTokenResp);
 
   rpc GetClientConfig(getClientConfigReq)returns(getClientConfigResp);
+  rpc RemoveClientConfigs(removeClientConfigsReq)returns(removeClientConfigsResp);
+  rpc SetClientConfigs(setClientConfigsReq)returns(setClientConfigsResp);
 }
 
 
