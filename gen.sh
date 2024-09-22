@@ -26,3 +26,6 @@ protoc --go_out=plugins=grpc:./third --go_opt=module=github.com/OpenIMSDK/protoc
 protoc --go_out=plugins=grpc:./user --go_opt=module=github.com/OpenIMSDK/protocol/user user/user.proto
 protoc --go_out=plugins=grpc:./wrapperspb --go_opt=module=github.com/OpenIMSDK/protocol/wrapperspb wrapperspb/wrapperspb.proto
 protoc --go_out=plugins=grpc:./statistics --go_opt=module=github.com/OpenIMSDK/protocol/statistics statistics/statistics.proto
+
+# 移除生成的.pb.go文件中的omitempty标记
+find . -name "*.pb.go" -type f -print0 | xargs -0 -n1 -IX bash -c 'sed s/,omitempty// X > X.tmp && mv X{.tmp,}'
