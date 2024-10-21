@@ -316,6 +316,13 @@ message getNotificationAccountReq{
 message getNotificationAccountResp{
 }
 
+message setSuperUsersReq{
+  repeated  string userIDs = 1;
+  OpenIMServer.protobuf.BoolValue isSuperUser = 2;
+}
+
+message setSuperUsersResp{}
+
 service user {
   //Get the specified user information full field
   rpc getDesignateUsers(getDesignateUsersReq) returns(getDesignateUsersResp);
@@ -362,5 +369,6 @@ service user {
   rpc searchNotificationAccount(searchNotificationAccountReq)returns(searchNotificationAccountResp);
   //getNotificationAccount by userID
   rpc getNotificationAccount(getNotificationAccountReq)returns(getNotificationAccountResp);
+  rpc setSuperUsers(setSuperUsersReq) returns(setSuperUsersResp);
 }
 
