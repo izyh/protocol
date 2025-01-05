@@ -380,3 +380,8 @@ const (
 	SubscriberUser = 1
 	Unsubscribe    = 2
 )
+
+const (
+	Allow    = 1
+	NotAllow = 2
+)
