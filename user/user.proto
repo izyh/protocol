@@ -323,6 +323,12 @@ message setSuperUsersReq{
 
 message setSuperUsersResp{}
 
+message getAllAdminReq {}
+
+message getAllAdminResp {
+  map<string, int64> admins = 1;
+}
+
 service user {
   //Get the specified user information full field
   rpc getDesignateUsers(getDesignateUsersReq) returns(getDesignateUsersResp);
@@ -339,6 +345,8 @@ service user {
   rpc getPaginationUsers(getPaginationUsersReq) returns (getPaginationUsersResp);
   //user registration
   rpc userRegister(userRegisterReq) returns (userRegisterResp);
+   //Get all admin user
+   rpc getAllAdmin(getAllAdminReq) returns (getAllAdminResp);
   //Get all user IDs
   rpc getAllUserID(getAllUserIDReq) returns (getAllUserIDResp);
   //Get the total number of users and the user increment within a specified time period
