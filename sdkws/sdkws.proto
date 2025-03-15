@@ -510,6 +510,7 @@ message MessageRevokedContent {
 	int64 sourceMessageSendTime = 6;        
 	string sourceMessageSendID = 7;    
 	string sourceMessageSenderNickname = 8;  
+	string sourceMessageContent = 9;  
 	int32 sessionType = 10;
 	int64 seq = 11;                         
 	string ex = 12;                        
